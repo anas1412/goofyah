@@ -1,7 +1,12 @@
 chrome.runtime.onInstalled.addListener(function () {
   // Play the sound effect
-  function playSound() {
-    var audio = new Audio(chrome.runtime.getURL("audio/sound.mp3"));
+  function playPoopSound() {
+    var audio = new Audio(chrome.runtime.getURL("audio/poop.mp3"));
+    audio.play();
+  }
+
+  function playFartSound() {
+    var audio = new Audio(chrome.runtime.getURL("audio/fart.mp3"));
     audio.play();
   }
 
@@ -35,7 +40,11 @@ chrome.runtime.onInstalled.addListener(function () {
   ) {
     // Check if the word "poop" is found
     if (request.word === "poop") {
-      playSound();
+      playPoopSound();
+    }
+    // Check if the word "fart" is found
+    else if (request.word === "fart") {
+      playFartSound();
     }
   });
 });

@@ -17,5 +17,12 @@ document.addEventListener("DOMSubtreeModified", function () {
       chrome.runtime.sendMessage({ word: "poop" });
       break;
     }
+
+    // Check if the word "fart" exists in the text node
+    if (node.textContent.includes("fart")) {
+      // Send a message to the background script
+      chrome.runtime.sendMessage({ word: "fart" });
+      break;
+    }
   }
 });

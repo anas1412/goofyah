@@ -4,11 +4,11 @@
 
 ## Description
 
-The Goofy Ah Extension is a Chrome extension that plays a fun sound effect whenever the word "poop" appears in the browser. It injects a content script into web pages, monitors the DOM for the word "poop," and triggers the sound effect when found.
+The Goofy Ah Extension is a Chrome extension that plays a fun sound effect whenever the word "poop" etc... appears in the browser. It injects a content script into web pages, monitors the DOM for the word "poop" for example and triggers the sound effect when found.
 
 ## Features
 
-- Plays a sound effect when the word "poop" is detected in web pages.
+- Plays a sound effect when the word "poop" etc.. is detected in web pages.
 - Adds an entertaining element to browsing experiences.
 
 ## Installation
@@ -22,18 +22,18 @@ The Goofy Ah Extension is a Chrome extension that plays a fun sound effect whene
 
 1. Make sure the extension is installed and enabled in Chrome.
 2. Browse the web as usual.
-3. Whenever the word "poop" appears in a web page, the extension will play the designated sound effect.
+3. Whenever the word "poop" etc.. appears in a web page, the extension will play the designated sound effect.
 
 ## Customization
 
 If you want to change the sound effect, follow these steps:
 
-1. Replace the `sound.mp3` file located in the `audio` folder with your desired sound effect file.
-2. Make sure the new sound effect file retains the name `sound.mp3`.
+1. Replace the `fart.mp3` file for example located in the `audio` folder with your desired sound effect file.
+2. Make sure the new sound effect file retains the same name.
 
 ## Troubleshooting
 
-- If the sound effect doesn't play, ensure that the sound file `sound.mp3` is located in the `audio` folder of the extension.
+- If the sound effect doesn't play, ensure that the respective sound file is located in the `audio` folder of the extension.
 - Make sure the extension is enabled in Chrome's extensions settings.
 
 ## Contribution
