@@ -1,14 +1,9 @@
 chrome.runtime.onInstalled.addListener(function () {
   // Play the sound effect
   function playSound() {
-    var audio = new Audio("audio/sound.mp3");
+    var audio = new Audio(chrome.runtime.getURL("audio/sound.mp3"));
     audio.play();
   }
-
-  //function playSound() {
-  //  var audio = new Audio(chrome.runtime.getURL('audio/sound.mp3'));
-  //  audio.play();
-  //}
 
   // Listen for URL changes
   chrome.webNavigation.onCompleted.addListener(function (details) {
@@ -16,12 +11,16 @@ chrome.runtime.onInstalled.addListener(function () {
     var tabId = details.tabId;
 
     // Inject content script
-    chrome.tabs.executeScript(tabId, { file: "content.js" }, function () {
-      // Check if the content script was injected successfully
-      if (chrome.runtime.lastError) {
-        console.error(chrome.runtime.lastError);
+    chrome.tabs.executeScript(
+      tabId,
+      { file: chrome.runtime.getURL("content.js") }, // Use chrome.runtime.getURL to get the absolute URL
+      function () {
+        // Check if the content script was injected successfully
+        if (chrome.runtime.lastError) {
+          console.error(chrome.runtime.lastError);
+        }
       }
-    });
+    );
   });
 
   // Listen for messages from the content script
