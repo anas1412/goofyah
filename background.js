@@ -13,11 +13,15 @@ chrome.runtime.onInstalled.addListener(function () {
     // Inject content script
     chrome.tabs.executeScript(
       tabId,
-      { file: chrome.runtime.getURL("content.js") }, // Use chrome.runtime.getURL to get the absolute URL
-      function () {
-        // Check if the content script was injected successfully
+      { file: chrome.runtime.getURL("content.js") },
+      function (result) {
         if (chrome.runtime.lastError) {
-          console.error(chrome.runtime.lastError);
+          console.error(
+            "Content script injection error:",
+            chrome.runtime.lastError
+          );
+        } else if (result === undefined || result[0] === null) {
+          console.error("Content script injection failed.");
         }
       }
     );
